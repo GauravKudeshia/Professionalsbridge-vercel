@@ -3,7 +3,11 @@ const mammoth = require("mammoth");
 
 const MAX_FILE_BYTES = 3 * 1024 * 1024;
 const MAX_TEXT_CHARS = 28000;
-const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash-lite";
+const DEFAULT_MODELS = [
+  "gemini-2.5-flash-lite",
+  "gemini-2.5-flash",
+  "gemini-2.0-flash-lite"
+];
 
 const TOOL_CONFIG = {
   "ats-score-checker": {
@@ -163,14 +167,28 @@ function normalizeMarkdown(text) {
     .slice(0, 16000);
 }
 
-async function callGemini(prompt) {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    throw new Error("GEMINI_API_KEY is not configured in Vercel.");
-  }
+function getModelCandidates() {
+  const configured = [
+    process.env.GEMINI_MODEL,
+    process.env.GEMINI_FALLBACK_MODELS
+  ]
+    .filter(Boolean)
+    .flatMap((value) => String(value).split(","))
+    .map((value) => value.trim())
+    .filter(Boolean);
 
+  return Array.from(new Set([...configured, ...DEFAULT_MODELS]));
+}
+
+function isTemporaryModelError(message) {
+  return /high demand|overloaded|temporar|unavailable|try again later|503/i.test(
+    message
+  );
+}
+
+async function generateWithModel(apiKey, model, prompt) {
   const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${encodeURIComponent(apiKey)}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -212,6 +230,33 @@ async function callGemini(prompt) {
   }
 
   return normalizeMarkdown(text);
+}
+
+async function callGemini(prompt) {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    throw new Error("GEMINI_API_KEY is not configured in Vercel.");
+  }
+
+  const models = getModelCandidates();
+  let lastError;
+
+  for (const model of models) {
+    try {
+      return await generateWithModel(apiKey, model, prompt);
+    } catch (error) {
+      lastError = error;
+      if (!isTemporaryModelError(error.message || "")) {
+        throw error;
+      }
+    }
+  }
+
+  throw new Error(
+    lastError && lastError.message
+      ? `${lastError.message} Please try again in a few minutes.`
+      : "The AI service is temporarily unavailable. Please try again in a few minutes."
+  );
 }
 
 module.exports = async function handler(req, res) {
