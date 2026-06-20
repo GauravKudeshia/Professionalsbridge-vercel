@@ -3,7 +3,7 @@ const mammoth = require("mammoth");
 
 const MAX_FILE_BYTES = 3 * 1024 * 1024;
 const MAX_TEXT_CHARS = 28000;
-const MODEL = process.env.GEMINI_MODEL || "gemini-2.0-flash";
+const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash-lite";
 
 const TOOL_CONFIG = {
   "ats-score-checker": {
@@ -191,6 +191,11 @@ async function callGemini(prompt) {
       json.error && json.error.message
         ? json.error.message
         : "Gemini request failed.";
+    if (/quota|rate limit|exceeded/i.test(message)) {
+      throw new Error(
+        "The AI service reached its current Gemini quota. Please try again shortly, or check the Gemini API key project's quota and billing settings in Google AI Studio."
+      );
+    }
     throw new Error(message);
   }
 
