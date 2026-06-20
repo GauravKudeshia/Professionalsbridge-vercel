@@ -1,0 +1,219 @@
+.tool-shell {
+  background: #f7f6f1;
+  min-height: 100vh;
+}
+
+.tool-main {
+  padding: 7rem 1.5rem 5rem;
+}
+
+.tool-wrap {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.tool-kicker {
+  margin-bottom: 0.75rem;
+  color: #6a57ff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tool-heading {
+  max-width: 760px;
+  margin: 0 0 1rem;
+  color: #151529;
+  font-size: clamp(2.3rem, 5vw, 4.7rem);
+  line-height: 0.96;
+}
+
+.tool-subtitle {
+  max-width: 720px;
+  margin: 0 0 2.5rem;
+  color: #57556a;
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.tool-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.tool-panel {
+  border: 1px solid rgba(21, 21, 41, 0.12);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(21, 21, 41, 0.08);
+}
+
+.tool-panel-inner {
+  padding: 1.35rem;
+}
+
+.tool-panel-title {
+  margin: 0 0 0.35rem;
+  color: #151529;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.tool-panel-copy {
+  margin: 0 0 1.15rem;
+  color: #666278;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.tool-upload {
+  position: relative;
+  display: flex;
+  min-height: 260px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px dashed rgba(106, 87, 255, 0.45);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(106, 87, 255, 0.06), rgba(255, 255, 255, 0));
+  text-align: center;
+}
+
+.tool-upload input {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.tool-upload-title {
+  display: block;
+  color: #151529;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.tool-upload-meta {
+  display: block;
+  margin-top: 0.45rem;
+  color: #68647a;
+  font-size: 0.92rem;
+}
+
+.tool-file-name {
+  margin-top: 0.9rem;
+  color: #151529;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.tool-field {
+  margin-bottom: 1rem;
+}
+
+.tool-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #151529;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.tool-input,
+.tool-textarea {
+  width: 100%;
+  border: 1px solid rgba(21, 21, 41, 0.14);
+  border-radius: 8px;
+  background: #fff;
+  color: #151529;
+  font: inherit;
+}
+
+.tool-input {
+  min-height: 48px;
+  padding: 0 0.95rem;
+}
+
+.tool-textarea {
+  min-height: 150px;
+  padding: 0.85rem 0.95rem;
+  resize: vertical;
+}
+
+.tool-textarea.is-resume {
+  min-height: 240px;
+}
+
+.tool-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tool-action {
+  min-height: 48px;
+  border: 0;
+}
+
+.tool-status {
+  color: #5c5870;
+  font-size: 0.92rem;
+}
+
+.tool-results {
+  margin-top: 1.25rem;
+  border: 1px solid rgba(21, 21, 41, 0.12);
+  border-radius: 8px;
+  background: #151529;
+  color: #fff;
+}
+
+.tool-results[hidden] {
+  display: none;
+}
+
+.tool-results-inner {
+  padding: 1.35rem;
+}
+
+.tool-output {
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+}
+
+.tool-output h2,
+.tool-output h3 {
+  margin: 1.35rem 0 0.55rem;
+  color: #fff;
+  font-size: 1.08rem;
+}
+
+.tool-output p,
+.tool-output ul,
+.tool-output ol {
+  margin: 0 0 0.85rem;
+}
+
+.tool-output li {
+  margin-bottom: 0.4rem;
+}
+
+.tool-error {
+  color: #bb1b1b;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 920px) {
+  .tool-main {
+    padding-top: 5.5rem;
+  }
+
+  .tool-workspace {
+    grid-template-columns: 1fr;
+  }
+}

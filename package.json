@@ -1,0 +1,20 @@
+{
+  "name": "professionalsbridge-vercel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static Professionalsbridge site with native Vercel career tools.",
+  "scripts": {
+    "start": "vercel dev",
+    "test": "node scripts/check-tools.js"
+  },
+  "dependencies": {
+    "mammoth": "^1.8.0",
+    "pdf-parse": "^1.1.1"
+  },
+  "devDependencies": {
+    "vercel": "^34.3.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

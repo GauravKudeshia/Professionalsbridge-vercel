@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "functions": {
+    "api/gemini.js": {
+      "maxDuration": 30
+    }
+  }
+}
