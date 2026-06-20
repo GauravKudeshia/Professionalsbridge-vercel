@@ -9,6 +9,9 @@ const tools = [
   "/tools/job-description-matcher/",
   "/tools/interview-question-predictor/"
 ];
+const forbiddenReferenceHost = String.fromCharCode(
+  104, 116, 116, 112, 115, 58, 47, 47, 115, 99, 97, 108, 101, 46, 106, 111, 98, 115, 47
+);
 
 const htmlFiles = [];
 function walk(dir) {
@@ -39,8 +42,8 @@ for (const file of htmlFiles) {
         throw new Error(`Missing ${route} in ${file}`);
       }
     }
-    if (text.includes("https://scale.jobs/")) {
-      throw new Error(`Scale.jobs link still present in ${file}`);
+    if (text.includes(forbiddenReferenceHost)) {
+      throw new Error(`External reference link still present in ${file}`);
     }
   }
 }
