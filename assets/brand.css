@@ -43,6 +43,59 @@
   display: flex;
 }
 
+.hc-ticker-section {
+  position: relative;
+}
+
+.hc-ticker-section .logo-wrapper {
+  margin-left: 0;
+  overflow: hidden;
+}
+
+.hc-ticker-section .logos-raw-block {
+  padding-left: 210px;
+}
+
+.hc-ticker-caption {
+  align-items: flex-start;
+  background: #151b33;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  bottom: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  padding: 12px 24px;
+  position: absolute;
+  top: 0;
+  width: 210px;
+  z-index: 3;
+}
+
+.hc-ticker-caption span {
+  color: #c9ff49;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.hc-ticker-caption strong {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: 24px;
+  line-height: 1.1;
+  margin-top: 3px;
+}
+
+.hc-ticker-caption small {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 9px;
+  line-height: 1.25;
+  margin-top: 4px;
+}
+
 .hc-company-context,
 .hc-company-name {
   flex: none;
@@ -103,6 +156,23 @@
 
   .hc-company-name {
     font-size: 23px;
+  }
+
+  .hc-ticker-section .logos-raw-block {
+    padding-left: 132px;
+  }
+
+  .hc-ticker-caption {
+    padding: 10px 14px;
+    width: 132px;
+  }
+
+  .hc-ticker-caption strong {
+    font-size: 18px;
+  }
+
+  .hc-ticker-caption small {
+    display: none;
   }
 
 }
