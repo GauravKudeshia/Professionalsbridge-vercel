@@ -1,8 +1,8 @@
 {
-  "name": "professionalsbridge-vercel",
+  "name": "hirecrew-vercel",
   "version": "1.0.0",
   "private": true,
-  "description": "Static Professionalsbridge site with native Vercel career tools.",
+  "description": "Static HireCrew site with native Vercel career tools.",
   "scripts": {
     "start": "vercel dev",
     "test": "node scripts/check-tools.js"

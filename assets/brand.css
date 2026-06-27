@@ -1,0 +1,41 @@
+.hc-wordmark {
+  align-items: center;
+  color: #15152b;
+  display: inline-flex;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  gap: 10px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.hc-mark {
+  align-items: center;
+  background: #15152b;
+  border-radius: 6px;
+  color: #c9ff49;
+  display: inline-flex;
+  font-size: 13px;
+  height: 34px;
+  justify-content: center;
+  letter-spacing: 0;
+  width: 34px;
+}
+
+.footer-logo-link .hc-wordmark {
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .hc-wordmark {
+    font-size: 16px;
+    gap: 7px;
+  }
+
+  .hc-mark {
+    height: 30px;
+    width: 30px;
+  }
+
+}

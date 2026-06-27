@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">HireCrew</title>
+  <rect width="64" height="64" rx="12" fill="#15152b"/>
+  <path d="M17 17h8v11h14V17h8v30h-8V35H25v12h-8V17Z" fill="#c9ff49"/>
+  <path d="M48 22a15 15 0 1 0 0 20" fill="none" stroke="#a87ae6" stroke-width="5" stroke-linecap="round"/>
+</svg>
