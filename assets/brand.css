@@ -28,17 +28,17 @@
 }
 
 .hero-content-wrap .hc-hero-arrow {
-  bottom: 90px;
-  left: auto;
-  opacity: 0.82;
+  bottom: 22px;
+  left: -68px;
+  opacity: 0.72;
   pointer-events: none;
-  right: -112px;
+  right: auto;
   top: auto;
-  transform: rotate(-12deg);
-  width: 82px;
+  transform: rotate(-18deg);
+  width: 62px;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1299px) {
   .hero-content-wrap .hc-hero-arrow {
     display: none;
   }
