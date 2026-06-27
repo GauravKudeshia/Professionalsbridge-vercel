@@ -28,14 +28,55 @@
 }
 
 .hero-content-wrap .hc-hero-arrow {
-  bottom: 22px;
-  left: -68px;
-  opacity: 0.72;
+  bottom: 16px;
+  left: -88px;
+  opacity: 0.84;
   pointer-events: none;
   right: auto;
   top: auto;
-  transform: rotate(-18deg);
-  width: 62px;
+  transform: rotate(-14deg);
+  width: 92px;
+}
+
+.logos-raw-block .inner-ticker {
+  align-items: center;
+  display: flex;
+}
+
+.hc-company-context,
+.hc-company-name {
+  flex: none;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  margin-right: 72px;
+  white-space: nowrap;
+}
+
+.hc-company-context {
+  color: #c9ff49;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hc-company-name {
+  align-items: center;
+  color: #fff;
+  display: inline-flex;
+  font-size: 30px;
+  font-weight: 600;
+  gap: 14px;
+  line-height: 1;
+}
+
+.hc-company-name::before {
+  background: #a87ae6;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  content: "";
+  height: 12px;
+  transform: rotate(45deg);
+  width: 12px;
 }
 
 @media screen and (max-width: 1299px) {
@@ -53,6 +94,15 @@
   .hc-mark {
     height: 30px;
     width: 30px;
+  }
+
+  .hc-company-context,
+  .hc-company-name {
+    margin-right: 44px;
+  }
+
+  .hc-company-name {
+    font-size: 23px;
   }
 
 }
