@@ -27,6 +27,23 @@
   color: #fff;
 }
 
+.hero-content-wrap .hc-hero-arrow {
+  bottom: 90px;
+  left: auto;
+  opacity: 0.82;
+  pointer-events: none;
+  right: -112px;
+  top: auto;
+  transform: rotate(-12deg);
+  width: 82px;
+}
+
+@media screen and (max-width: 1199px) {
+  .hero-content-wrap .hc-hero-arrow {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .hc-wordmark {
     font-size: 16px;
