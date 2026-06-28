@@ -208,18 +208,16 @@
   color: #15152b;
   display: inline-flex;
   gap: 12px;
-  min-width: 172px;
+  min-width: 204px;
   padding: 11px 16px;
   line-height: 1;
 }
 
-.hc-company-name::before {
-  background: #a87ae6;
-  border-radius: 4px;
-  content: "";
-  height: 14px;
-  transform: rotate(45deg);
-  width: 14px;
+.hc-company-logo {
+  flex: none;
+  height: 28px;
+  object-fit: contain;
+  width: 52px;
 }
 
 .hc-company-name strong,
@@ -272,8 +270,13 @@
   }
 
   .hc-company-name {
-    min-width: 148px;
+    min-width: 176px;
     padding: 10px 13px;
+  }
+
+  .hc-company-logo {
+    height: 24px;
+    width: 42px;
   }
 
   .hc-company-name strong {
